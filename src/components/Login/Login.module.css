@@ -1,0 +1,62 @@
+/* ********************** everything is mobile first ********************************/
+.login {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.control {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.control label,
+.control input {
+  /* why is it display block? maybe to set some width on it, but later it will take up the whole width on a small size, mobile first! */
+  display: block;
+}
+
+.control label {
+  font-weight: bold;
+  /* this is like setting a width on it */
+  flex: 1;
+  color: #464646;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  flex: 4;
+  /* elements with font need to know what font they are using */
+  font: inherit;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #4f005f;
+  background: #f6dbfc;
+}
+
+.control.invalid input {
+  /* when input is invalid we just change the border color and the background color of the input */
+  border-color: red;
+  background: #fbdada;
+}
+
+.actions {
+  /* this is it to align the button in the action div to be in the middle at all times */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .control {
+    /*  */
+    flex-direction: row;
+    align-items: center;
+  }
+}
